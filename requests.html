@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Запросы</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/Stylesheets/requestsstyle.css">
+	<script type="text/javascript">
+		function show(state){
+				document.getElementById('window').style.display = state;			
+				document.getElementById('wrap').style.display = state;
+		}	
+	</script>
+</head>
+<body>
+<div onclick="show('none')" id="wrap"></div>
+<div id="window">
+	<h2 id="req_title">Результаты</h2>
+	<div id="imgmove"><img id="close" src="/Content/close.png" onclick="show('none')"></div>
+	<iframe name="table" id="showreq"></iframe>	
+</div>
+<a href="http://localhost/"><img title="Выход на заглавную страницу" id="close" src="/Content/close.png"></a>
+<section>
+<header>
+	<h1>Запросы</h1>
+</header>
+<div class="req">
+	<h3>Запрос №1</h3>
+	<p>Показать все сведения о поставщике,сделавшего самый дорогой заказ</p>
+	<form action="http://localhost/req1.php" method="GET" name="request1" target="table" onsubmit="show('block')">
+	<p><label>Введите месяц в формате ММ: </label><input class="texti" name="month" required type="month" ></p>
+		</select></p>
+	<input class="but" type="submit" value="Выполнить">
+	</form>
+</div>
+<div class="req">
+	<h3>Запрос №2</h3>
+	<p>Показать отчет о наличии лекарств по форме.</p>
+	<form action="http://localhost/req2.php" method="GET" name="request2" target="table" onsubmit="show('block')">
+		</select></p>
+	<input class="but" type="submit" value="Выполнить">
+	</form>
+</div>
+<div class="req">
+	<h3>Запрос №3</h3>
+	<p>Показать поставщиков не сделавших ни одного заказа.</p>
+	<form action="http://localhost/req3.php" method="GET" name="request3" target="table" onsubmit="show('block')">
+	<input class="but" type="submit" value="Выполнить">
+	</form>
+</div>
+<div class="req">
+	<h3>Запрос №4</h3>
+	<p>Показать поставщиков не сделавших ни одного заказа.</p>
+	<form action="http://localhost/req4.php" method="GET" name="request4" target="table" onsubmit="show('block')">
+	<p><label>Введите месяц в формате ММ: </label><input class="texti" name="month" required type="month" ></p>
+		</select></p>
+	<input class="but" type="submit" value="Выполнить">
+	</form>
+</div>	
+<div class="req">
+	<h3>Запрос №5</h3>
+	<p>Показать сколько заказов сделал каждый поставщик.</p>
+	<form action="http://localhost/req5.php" method="GET" name="request5" target="table" onsubmit="show('block')">
+		<p><label>Выберите количество последних месяцев: </label><select class="quali" name="qual">
+			<option value="3">3</option>
+			<option value="5">5</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+		</select></p>
+	<input class="but" type="submit" value="Выполнить">
+	</form>
+</div>
+<div class="req">
+	<h3>Процедура</h3>
+	<p>Занести отчет</p>
+	<form action="http://localhost/proc.php" method="GET" name="proc" target="pr">
+		<p><label>Введите дату: </label><input class="datei" required name="date" type="date"></p>
+		<input class="but" type="submit" value="Выполнить">
+	</form>
+	<form action="http://localhost/check.php" method="GET" name="check" target="table" onsubmit="show('block')">
+		<input class="but" type="submit" value="Вывести">
+	</form>
+</div>
+</section>
+</body>
+</html>
